@@ -29,7 +29,7 @@ int main()
     // Test countSort
     sort.countSort(arr, sorted, size);
 
-        // Test Print
+    // Test Print
     cout << "Sorted Data:" << endl;
     for(int loop = 0; loop < size; loop++)
     {

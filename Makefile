@@ -1,8 +1,8 @@
-a.out: main.o countingSort.o
-	g++ main.o countingSort.o -o a.out
+CC		:= g++
+OBJS	:= main.o countingSort.o
 
-main.o: main.cpp
-	g++ -c main.cpp
+a.out: $(OBJS)
+	$(CC) $(OBJS) -o a.out
 
 clean:
 	rm *.o a.out
