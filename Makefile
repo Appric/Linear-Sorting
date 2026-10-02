@@ -1,6 +1,8 @@
 CC		:= g++
 OBJS	:= main.o countingSort.o
 
+.PHONY: clean
+
 a.out: $(OBJS)
 	$(CC) $(OBJS) -o a.out
 
