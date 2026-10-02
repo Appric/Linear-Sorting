@@ -5,4 +5,4 @@ a.out: $(OBJS)
 	$(CC) $(OBJS) -o a.out
 
 clean:
-	rm *.o a.out
+	rm $(OBJS) a.out
