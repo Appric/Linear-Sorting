@@ -2,21 +2,21 @@
 #include <stack>
 #include <vector>
 
-void countSort(struct data arr[], struct data sorted[], int size)
+void sort_functions::countSort(struct data arr[], struct data sorted[], int size)
 {
     // Find the highest number
     int max = 0;
     for(int loop = 0; loop < size; loop++)
-        if(arr[loop].value > 0)
+        if(arr[loop].value > max)
             max = arr[loop].value;
 
     // Create the count vector
-    vector<stack<struct data>> count;
+    vector<stack<struct data>> count(max + 1);
 
     // Push all count values into the vector
     for(int loop = 0; loop < size; loop++)
     {
-        count.at(loop).push(arr[loop]);
+        count.at(arr[loop].value).push(arr[loop]);
     }
 
     // Fill the sorted array with the data
