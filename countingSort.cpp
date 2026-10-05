@@ -30,3 +30,7 @@ void sort_functions::countSort(struct data arr[], struct data sorted[], int size
         count.at(location).pop();
     }
 }
+
+void sort_functions::heapSort(){
+    
+}
