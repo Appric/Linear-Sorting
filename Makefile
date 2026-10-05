@@ -1,5 +1,5 @@
 CC		:= g++
-OBJS	:= main.o countingSort.o
+OBJS	:= main.o sort.o
 
 .PHONY: clean
 
