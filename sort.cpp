@@ -1,8 +1,8 @@
-#include "linearsort.h"
+#include "linearSort.h"
 #include <stack>
 #include <vector>
 
-void sort_functions::countSort(struct data arr[], struct data sorted[], int size)
+void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &sorted, int size)
 {
     // Find the highest number
     int max = 0;
