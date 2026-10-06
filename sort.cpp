@@ -31,6 +31,7 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
     }
 }
 
-void sort_functions::heapSort(struct data sorted[], int size){
+void sort_functions::heapSort(vector<struct data> &sorted, int size)
+{
     
 }
