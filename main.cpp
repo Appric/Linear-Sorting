@@ -45,6 +45,14 @@ int main()
         // Print the time
         cout << setw(22) << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms";
 
+        // Time and call heapSort
+        start = chrono::steady_clock::now();
+        sort.heapSort(sorted, size);
+        end = chrono::steady_clock::now();
+
+        // Print the time
+        cout << setw(22) << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms";
+
         // Print new line
         cout << endl;
     }
