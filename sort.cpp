@@ -31,6 +31,6 @@ void sort_functions::countSort(struct data arr[], struct data sorted[], int size
     }
 }
 
-void sort_functions::heapSort(){
+void sort_functions::heapSort(struct data sorted[], int size){
     
 }
