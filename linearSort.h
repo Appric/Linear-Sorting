@@ -13,5 +13,5 @@ class sort_functions
 {
     public:
         void countSort(vector<struct data> &arr, vector<struct data> &sorted, int size);
-        void heapSort(struct data sorted[], int size);
+        void heapSort(vector<struct data> &sorted, int size);
 };
