@@ -34,8 +34,6 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
 
 
 void sort_functions::heapSort(vector<struct data> &sorted, int size){
-<<<<<<< HEAD
-=======
     priority_queue<struct data> prioQueue;
 
     // Push the structs into the priority queue (min heap)
@@ -48,6 +46,6 @@ void sort_functions::heapSort(vector<struct data> &sorted, int size){
         sorted[loop] = prioQueue.top();
         prioQueue.pop();
    }
->>>>>>> 4836a698d5614e2ccca0f4ff0a92052079c4c19b
+
 
 }
