@@ -46,8 +46,8 @@ int main()
         cout << setw(22) << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms";
 
         // Time and call heapSort
-        start = chrono::steady_clock::now();
         sorted = arr;
+        start = chrono::steady_clock::now();
         sort.heapSort(sorted, size);
         end = chrono::steady_clock::now();
 

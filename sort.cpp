@@ -35,13 +35,5 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
 
 
 void sort_functions::heapSort(vector<struct data> &sorted, int size){
-    make_heap(sorted.begin(), sorted.end(), greater<struct data>());
-    //greater parameter flips the comparison sign
-    for(auto i = sorted.end(); i != sorted.begin(); i--)
-    { //put stucts into the heap or priority queue
-        pop_heap(sorted.begin(), i, greater<struct data>());
-    }
-
-   reverse(sorted.begin(), sorted.end());
 
 }
