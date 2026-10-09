@@ -33,7 +33,7 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
     }
 }
 
-<<<<<<< HEAD
+
 void sort_functions::heapSort(vector<struct data> &sorted, int size){
     priority_queue<int , vector<struct data>, greater<int>> min_heap; 
     //greater parameter flips the comparison sign
@@ -51,5 +51,3 @@ void sort_functions::heapSort(vector<struct data> &sorted, int size){
     }
     return;
 
-
-=======
