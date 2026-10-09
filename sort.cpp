@@ -50,4 +50,4 @@ void sort_functions::heapSort(vector<struct data> &sorted, int size){
         k++;
     }
     return;
-
+}
