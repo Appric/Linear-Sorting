@@ -2,7 +2,6 @@
 #include <stack>
 #include <vector>
 #include <queue>
-#include <algorithm>
 
 void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &sorted, int size)
 {
@@ -25,7 +24,7 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
     int location = 0;
     for(int loop = 0; loop < size; loop++)
     {
-        while(count.at(location).empty())
+        while(count.at(location).empty() && location < max)
                 location++;
 
         sorted[loop] = count.at(location).top();
@@ -35,5 +34,20 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
 
 
 void sort_functions::heapSort(vector<struct data> &sorted, int size){
+<<<<<<< HEAD
+=======
+    priority_queue<struct data> prioQueue;
+
+    // Push the structs into the priority queue (min heap)
+    for(int loop = 0; loop < size; loop++)
+        prioQueue.push(sorted[loop]);
+
+    // Pop the structs from the priority queue and store them in sorted
+   for(int loop = 0; loop < size; loop++)
+   {
+        sorted[loop] = prioQueue.top();
+        prioQueue.pop();
+   }
+>>>>>>> 4836a698d5614e2ccca0f4ff0a92052079c4c19b
 
 }

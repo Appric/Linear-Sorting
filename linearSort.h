@@ -8,7 +8,8 @@ struct data
     string name;
     int value;
 
-    bool operator>(const data& other) const{
+    bool operator<(const data &other) const
+    {
         return value < other.value;
     }
 };
