@@ -47,6 +47,7 @@ int main()
 
         // Time and call heapSort
         start = chrono::steady_clock::now();
+        sorted = arr;
         sort.heapSort(sorted, size);
         end = chrono::steady_clock::now();
 
