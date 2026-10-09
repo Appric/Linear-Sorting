@@ -10,7 +10,7 @@ struct data
 
     bool operator<(const data &other) const
     {
-        return value < other.value;
+        return value > other.value;
     }
 };
 
