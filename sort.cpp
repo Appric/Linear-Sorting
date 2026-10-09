@@ -1,5 +1,4 @@
 #include "linearSort.h"
-#include <stack>
 #include <vector>
 #include <queue>
 
@@ -11,8 +10,8 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
         if(arr[loop].value > max)
             max = arr[loop].value;
 
-    // Create the count vector
-    vector<stack<struct data>> count(max + 1);
+    // Create the count queue
+    vector<queue<struct data>> count(max + 1);
 
     // Push all count values into the vector
     for(int loop = 0; loop < size; loop++)
@@ -24,10 +23,10 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
     int location = 0;
     for(int loop = 0; loop < size; loop++)
     {
-        while(count.at(location).empty() && location < max)
+        while(count.at(location).empty())
                 location++;
 
-        sorted[loop] = count.at(location).top();
+        sorted[loop] = count.at(location).front();
         count.at(location).pop();
     }
 }
