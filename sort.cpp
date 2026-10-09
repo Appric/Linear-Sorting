@@ -2,7 +2,7 @@
 #include <stack>
 #include <vector>
 #include <queue>
-#include <functional> //used to invert standard heap into min heap
+#include <algorithm>
 
 void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &sorted, int size)
 {
@@ -35,19 +35,13 @@ void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &so
 
 
 void sort_functions::heapSort(vector<struct data> &sorted, int size){
-    priority_queue<int , vector<struct data>, greater<int>> min_heap; 
+    make_heap(sorted.begin(), sorted.end(), greater<struct data>());
     //greater parameter flips the comparison sign
-    for(int i = 0; i < size; i++)
+    for(auto i = sorted.end(); i != sorted.begin(); i--)
     { //put stucts into the heap or priority queue
-        min_heap.push(sorted[i]);
+        pop_heap(sorted.begin(), i, greater<struct data>());
     }
 
-    int k = 0;
-    while(!min_heap.empty())
-    {
-        sorted[k] = min_heap.top();
-        min_heap.pop();
-        k++;
-    }
-    return;
+   reverse(sorted.begin(), sorted.end());
+
 }
