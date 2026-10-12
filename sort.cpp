@@ -48,3 +48,51 @@ void sort_functions::heapSort(vector<struct data> &sorted, int size){
 
 
 }
+
+void sort_functions::mergeSort(vector<struct data> &sorted, int size)
+{
+    if(sorted.size() == 0)
+        return;
+
+    // Start the merge
+    vector<struct data> temp (size);
+    mergeSubset(0, size - 1, sorted, temp, 0);
+}
+
+void sort_functions::mergeSubset(int start, int end, vector<struct data> &sub, vector<struct data> &temp, int depth)
+{
+    // Return at a single item
+    if(start == end)
+        return;
+
+    // Find the middle
+    int mid = (start + end) / 2;
+
+    // Merge the left and right subsets
+    mergeSubset(start, mid, sub, temp, depth + 1);
+    mergeSubset(mid + 1, end, sub, temp, depth + 1);
+
+    merge(start, mid, end, sub, temp);
+}
+
+void sort_functions::merge(int start, int mid, int end, vector<struct data> &sub, vector<struct data> &temp)
+{
+    // Keep track of left, right, and sub indexes
+    int l = start, r = mid + 1, s = start;
+
+    // Copy current data over to temp
+    for(int loop = start; loop <= end; loop++)
+        temp[loop] = sub[loop];
+
+    while(l <= mid && r <= end)
+    {
+        if(temp[l].value < temp[r].value)
+            sub[s++] = temp[l++];
+        else
+            sub[s++] = temp[r++];
+    }
+
+    // Fill remaining from the left side
+    while(l <= mid)
+        sub[s++] = temp[l++];
+}
