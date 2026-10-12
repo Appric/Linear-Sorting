@@ -22,7 +22,7 @@ int main()
     srand(10);
 
     // Print header
-    cout << "Data Size - Linear (Counting Sort) - Comparison (Heap Sort) - Divide and Conquer (Merge Sort)" << endl;
+    cout << "Data Size - Linear (Counting Sort) - Comparison (Heap Sort) - Parallel Divide and Conquer (Merge Sort)" << endl;
 
     // Main data creation and timing loop
     for(size; size <= maxSize; size *= 10)
@@ -61,7 +61,7 @@ int main()
         end = chrono::steady_clock::now();
 
         // Print the time
-        cout << setw(31) << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms";
+        cout << setw(40) << chrono::duration_cast<chrono::milliseconds>(end - start).count() << " ms";
 
         // Print new line
         cout << endl;

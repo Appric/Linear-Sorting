@@ -1,6 +1,7 @@
 #include "linearSort.h"
 #include <vector>
 #include <queue>
+#include <thread>
 
 void sort_functions::countSort(vector<struct data> &arr, vector<struct data> &sorted, int size)
 {
@@ -69,8 +70,19 @@ void sort_functions::mergeSubset(int start, int end, vector<struct data> &sub, v
     int mid = (start + end) / 2;
 
     // Merge the left and right subsets
-    mergeSubset(start, mid, sub, temp, depth + 1);
-    mergeSubset(mid + 1, end, sub, temp, depth + 1);
+    if(depth < 3)
+    {
+        thread one(&sort_functions::mergeSubset, this, start, mid, ref(sub), ref(temp), depth + 1);
+        thread two(&sort_functions::mergeSubset, this, mid + 1, end, ref(sub), ref(temp), depth + 1);
+
+        one.join();
+        two.join();
+    }
+    else
+    {
+        mergeSubset(start, mid, sub, temp, depth + 1);
+        mergeSubset(mid + 1, end, sub, temp, depth + 1);
+    }
 
     merge(start, mid, end, sub, temp);
 }
