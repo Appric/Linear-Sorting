@@ -80,6 +80,6 @@ int main()
      cout << "Top 10 uber drivers and their rating(0-100): " << endl;
     for(int i = 1; i <= 10; i++)
     {
-        cout << "Number " << i << " " << sorted[maxSize - i].name << " : " << (float)sorted[maxSize - i].value / 10 << endl;
+        cout << "Number " << i << " " << sorted[maxSize - i].name << " : " << (float)sorted[maxSize - i].value / 100 << endl;
     }
 }
